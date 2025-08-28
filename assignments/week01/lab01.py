@@ -9,15 +9,6 @@ print("=== Personal Profile Creator ===")
 # Then display it as a profile
 
 # Write your solution here:
-full_name = input("What is your name? : ")
-age = input("How old age you? :")
-email = input("What is your email address? : ")
-phone_number = input("What is your phone number? : ")
-hobby = input("What is your favorite hobby? :")
 
-print("=== Your profile ===")
-print("Full name :", full_name)
-print("Age : ", age)
-print("Email : ", email)
-print("Phone Number : ", phone_number)
-print("Favorite Hobby : ", hobby)
+rate_per_unit = 350 * 4.5
+print("a : ", rate_per_unit)
