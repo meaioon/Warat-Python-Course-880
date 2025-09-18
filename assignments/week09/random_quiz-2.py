@@ -44,22 +44,57 @@ import random
 
 def get_parity_hint(number):
     if number % 2 == 0:
-        return "HINT: The number is even" 
+        return "HINT : The number is even" 
     else:
-        return "HINT: The number is odd"
+        return "HINT : The number is odd"
 
 def get_divisibility_hint(number):
     if number % 3 == 0:
-        return "HINT: The number is divisible by 3"
+        return "HINT : The number is divisible by 3"
     elif number % 5 == 0:
-        return "HINT: The number is divisible by 5"
+        return "HINT : The number is divisible by 5"
     else:
-        return "HINT: The number is NOT divisible by 3 or 5"
+        return "HINT : The number is NOT divisible by 3 or 5"
 
 def get_range_hint(number, current_min=1, current_max=100):
     # Return narrowed range around the number
-    pass
+    return f"HINT : The narrowed range {range(current_min, current_max)}"
 
 def get_thefirst_digit_hint(number):
-    # Retun the first digit of the number
-    pass
+    # Return the first digit of the number
+    return f"HINT : The first digit of the number is {number // 10}"
+
+# สุ่มเลขระหว่าง 1 - 100
+test_random = random.randint(1, 100)
+
+print("--- เกมทายตัวเลข ทายใจคอมพิวเตอร์ ---")
+print("--- ทายตัวเลขจำนวนเต็มมาสิตั้งแต่เลข 1 - 100 ---")
+print("--- คุณมีโอกาสไม่จำกัด ! ---")
+
+i = 1
+
+while True:
+
+    # รับค่าการทายเลขจากผู้ใช้
+    print(f"ความพยายามครั้งที่ {i}")
+    guess_number = int(input("What is your guess number (1 - 100) ? : "))
+
+    # condition ==> if-elif-else
+    if test_random == guess_number:
+        print("นปโปะ หม่ำ หม่ำ, หม่ำ หม่ำ กู๊ดบอย, กู๊ดบอย หม่ำ หม่ำ, หม่ำ หม่ำ เก่งมาก, เก่งมาก เก่งมาก!")
+        break
+    elif guess_number < test_random:
+        print("น้อยไปหน่อย พยายามเข้านะ!")
+    elif guess_number > test_random:
+        print("มากไปละ อย่าให้มีครั้งที่สอง!")
+
+    if i == 3:
+        print(get_parity_hint(test_random))
+    elif i == 5:
+        print(get_divisibility_hint(test_random))
+    elif i == 7:
+        print(get_range_hint(test_random, test_random-12, test_random+12))
+    elif i == 10:
+        print(get_thefirst_digit_hint(test_random))
+
+    i = i + 1
