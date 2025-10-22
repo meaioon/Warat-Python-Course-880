@@ -9,6 +9,7 @@ print("=== Personal Profile Creator ===")
 # Then display it as a profile
 
 # Write your solution here:
+
 full_name = input("What is your name? : ")
 age = input("How old age you? :")
 email = input("What is your email address? : ")
